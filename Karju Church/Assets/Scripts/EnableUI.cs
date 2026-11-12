@@ -13,23 +13,26 @@ public class EnableUI : MonoBehaviour
         get { return visible; }
     }
 
-    public void Show()
+    public void Show(int i)
     {
-        foreach (GameObject item in objects)
-        {
-            item.SetActive(true);
-        }
+        objects[i].SetActive(true);
 
         visible = true;
+
+        CursorSettings.Selecting();
     }
 
-    public void Hide()
+    public void Hide(int i)
     {
-        foreach (GameObject item in objects)
-        {
-            item.SetActive(false);
-        }
+        objects[i].SetActive(false);
 
         visible = false;
+
+        CursorSettings.Looking();
+    }
+
+    public bool objectVisibility(int i)
+    {
+        return objects[i].activeSelf;
     }
 }

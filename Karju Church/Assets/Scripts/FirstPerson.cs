@@ -8,36 +8,38 @@ public class FirstPerson : MonoBehaviour
     private Vector2 mouse;
     private float horizontalRot = 0;
     private float invert = -1;
+    private GlobalVariables global = new GlobalVariables();
 
     [SerializeField] private CharacterController obj;
     [SerializeField] private Transform player;
     [SerializeField] private Transform camera;
     [SerializeField] private float sensitivity;
     [SerializeField] private float speed;
-    [SerializeField] private EnableUI panel;
+    [SerializeField] private EnableUI canvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        CursorSettings.Looking();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            if (panel.Visible)
+            if (canvas.objectVisibility(0))
             {
-                panel.Hide();
+                canvas.Hide(global.settingsIndex);
             }
 
-            else { 
-                panel.Show();
+            else 
+            { 
+                canvas.Show(global.settingsIndex);
             }
         }
 
-        else if (!panel.Visible)
+        else if (!canvas.objectVisibility(0) && !canvas.objectVisibility(1))
         {
             movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
             mouse = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
