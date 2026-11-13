@@ -35,9 +35,9 @@ public class DetectClick : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("E pressed");
-                canvasTwoD.Show(global.testStoryIndex);
                 canvasTwoD.Hide(global.textIndex);
                 canvasThreeD.Hide(global.glassIndex);
+                canvasTwoD.Show(global.testStoryIndex);
             }
         }
 

@@ -20,6 +20,7 @@ public class FirstPerson : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canvas.Show(0);
         CursorSettings.Looking();
     }
 

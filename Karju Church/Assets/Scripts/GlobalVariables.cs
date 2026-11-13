@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GlobalVariables : MonoBehaviour
 {
-    public int settingsIndex = 0;
-    public int testStoryIndex = 1;
-    public int textIndex = 2;
+    public int settingsIndex = 1;
+    public int testStoryIndex = 2;
+    public int textIndex = 3;
 
     public int glassIndex = 0;
 
